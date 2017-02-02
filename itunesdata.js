@@ -8,18 +8,12 @@ $(function() {
 			contentType: "jsonp",
 			async: false,
         	dataType: "jsonp",
-        	success: function(data, status, jqXHL) {
-            console.log(data);
+        	success: function(songs) {
+            $("#output").html();
+        		for (var i = 0; i < songs.results.length; i++){
+        			$("#output").prepend("<div><div class='well'><a href=" + songs.results[i] + "><h2>" + songs.results[i].trackName + "</h2>" + " <p>" + songs.results[i].artistName + "</p> </a></div></div>");
             }
-          })
-      .done(function() {
-        console.log("success");
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
+          }
+       })
     });
   });
-});
