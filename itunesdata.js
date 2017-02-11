@@ -11,7 +11,7 @@ $(function() {
         	success: function(songs) {
             $("#output").html();
         		for (var i = 0; i < songs.results.length; i++){
-        			$("#output").prepend("<div><div class='well'><a href=" + songs.results[i] + "><img src=" + songs.results[i].artworkUrl100 + "><h2>" + songs.results[i].trackName + "</h2>" + "<p>" + songs.results[i].artistName + "</p> </a></div></div>");
+        			$("#output").prepend("<div><div class='well'><a href=" + songs.results[i] + "><img src=" + songs.results[i].artworkUrl100 + "><h2>" + songs.results[i].trackName + "</h2>" + "<p>" + songs.results[i].artistName + "</p><audio controls><source src='" + songs.results[i].previewUrl + "'type=" + "audio/mp4>" + "</audio>" + "</a></div></div>");
             }
           }
        })
